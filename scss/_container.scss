@@ -1,0 +1,85 @@
+.container {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem hsla(0,0,0,0.15);
+    margin: 4.4375rem 2.0625rem;
+
+    @include breakpoint-up(large) {
+        display: grid;
+        margin: 10.125rem 25.1875rem;
+        grid-template-areas: 
+        "header header"
+        "cta description";
+        grid-template-rows: 3fr 4fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__header {
+        padding: 1.5rem;
+
+        @include breakpoint-up(large) {
+            grid-area: header;
+            padding: 1.5rem 2.5625rem;
+            padding-bottom: 0;
+        }
+
+        h1 {
+            color:$mediumTurquoise;
+        }
+
+        h2 {
+            color: $brightYellow;
+        }
+
+        p {
+            color: $grayishBlue;
+
+            @include breakpoint-up(large) {
+                font-size: 0.9375rem;
+            }
+        }
+    }
+
+    &__cta {
+        padding: 1.5rem;
+        background-color: $cyan;
+
+        @include breakpoint-up(large) {
+            grid-area: cta;
+            padding: 2.5625rem;
+            border-radius: 0 0 0 1rem;
+        }
+
+        p {
+            display: inline;
+            font-size: 0.9rem;
+        }
+
+        p.dollar {
+            font-size: 2rem;
+        }
+
+        p.month {
+            color: $lightGray;
+            margin-left: 0.8rem;
+        }
+    }
+
+    &__money {
+       // vertically align items in the center
+    }
+
+    &__description {
+        padding: 1.5rem;
+        background-color: $mediumTurquoise;
+        border-radius: 0 0 1rem 1rem;
+
+        @include breakpoint-up(large) {
+            grid-area: description;
+            border-radius: 0 0 1rem 0;
+            padding: 2.5625rem;
+        }
+    }
+}
+
+
